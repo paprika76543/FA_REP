@@ -17,13 +17,7 @@ class Item(BaseModel):
 
 class KeyphraseExtractionPipeline(TokenClassificationPipeline):
     def __init__(self, model, *args, **kwargs):
-       """Данная функция отвечает за загрузку предобученной модели и токенизатора"""
-        super().__init__(
-            model=AutoModelForTokenClassification.from_pretrained(model),
-            tokenizer=AutoTokenizer.from_pretrained(model),
-            *args,
-            **kwargs
-        )
+        super().__init__(model=AutoModelForTokenClassification.from_pretrained(model),tokenizer=AutoTokenizer.from_pretrained(model),*args,**kwargs)
 
     def postprocess(self, all_outputs):
         """Даннвя функция отвечает за вывод ключевых слов, полученных в результате обрабоки поступившего на вход текста"""
