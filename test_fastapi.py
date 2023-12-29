@@ -1,4 +1,4 @@
---import-mode=importlib
+
 from fastapi.testclient import TestClient
 from fast_api_app import app
 
